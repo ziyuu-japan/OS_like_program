@@ -19,13 +19,15 @@ usbメモリがマウント状態だとResource busyというエラーが出る�
 ステップ3:  dd コマンドでアセンブルでできた機械語を書き込む  
 	dd if=pbr.bin of=¥¥?¥Device¥Harddisk4¥Partition0 bs=512 count=1 (permition deniedと出るので　sudoをつける必要がある)  
 
-make pbr.bin  
-nasm -f bin -o pbr.bin pbr.asm  
+make pbr.bin  
+以下で機械語作成?　これでできたpbr.binをUSBメモリに書き込んだ
+nasm -f bin -o pbr.bin pbr.asm
 
 アセンブル  
-nasm  
+nasmを使用
 
-BIOSのフルなドキュメント
-https://www.embeddedarm.com/documentation/third-party/x86-ebios-43.pdf
-BIOSの省略なドキュメント
-ftp://ftp.embeddedarm.com/old/saved-downloads-manuals/EBIOS-UM.PDF
+BIOSのフルなドキュメント  
+<https://www.embeddedarm.com/documentation/third-party/x86-ebios-43.pdf>  
+でシャットダウンする方法を調べた。
+レジスタの値をセットしてint 80するとシャットダウンするようにしたかったが、
+なぜか、ハードディスクに入ったOSを起動させてしまう。
