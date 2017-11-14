@@ -15,15 +15,15 @@ ddコマンドを使う
 usbメモリがマウント状態だとResource busyというエラーが出るので、マウント状態を外す必要がある  
 ステップ?:diskutil　listで外部ストレージの確認  
 ステップ1: ls /Volumes で外部ストレージの名前を確認  
-ステップ2: diskutil umount (外部ストレージへのパス)　でアンマウント (名前はdisukutil　listで確認したものを使用する)
-ステップ3:  dd コマンドでアセンブルでできた機械語を書き込む
-	dd if=pbr.bin of=¥¥?¥Device¥Harddisk4¥Partition0 bs=512 count=1 (permition deniedと出るので　sudoをつける必要がある)
+ステップ2: diskutil umount (外部ストレージへのパス)　でアンマウント (名前はdisukutil　listで確認したものを使用する)  
+ステップ3:  dd コマンドでアセンブルでできた機械語を書き込む  
+	dd if=pbr.bin of=¥¥?¥Device¥Harddisk4¥Partition0 bs=512 count=1 (permition deniedと出るので　sudoをつける必要がある)  
 
-make pbr.bin
-nasm -f bin -o pbr.bin pbr.asm
+make pbr.bin  
+nasm -f bin -o pbr.bin pbr.asm  
 
-アセンブル
-nasm
+アセンブル  
+nasm  
 
 BIOSのフルなドキュメント
 https://www.embeddedarm.com/documentation/third-party/x86-ebios-43.pdf
