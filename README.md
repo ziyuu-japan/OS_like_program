@@ -10,7 +10,8 @@ diskutil list
 ## usbメモリへの書き込み  
 ddコマンドを使う
 
-書き込み時の注意:usbメモリがマウント状態だとResource busyというエラーが出るので、マウント状態を外す必要がある
+## 書き込み時の注意
+usbメモリがマウント状態だとResource busyというエラーが出るので、マウント状態を外す必要がある
 ステップ?:diskutil　listで外部ストレージの確認
 ステップ1: ls /Volumes で外部ストレージの名前を確認
 ステップ2: diskutil umount (外部ストレージへのパス)　でアンマウント (名前はdisukutil　listで確認したものを使用する)
